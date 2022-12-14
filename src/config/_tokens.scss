@@ -1,0 +1,197 @@
+$tokens:(
+  version: 1.0.3,
+  cdn: "https://cdn.jsdelivr.net/gh/NYCOpportunity/growingupnyc-patterns@1.0.3/dist/",
+  output: "/Users/dehirth/envs/cityofnewyork/mhfa/src/config/_tokens.scss",
+  fonts: (
+    system: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
+    text-sans: ("Open Sans", sans-serif),
+    display-sans: ("museo-sans-rounded", sans-serif),
+    main: "https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;800&display=swap"
+  ),
+  font-weights: (
+    medium: 500,
+    semibold: 600,
+    extrablack: 900
+  ),
+  font-sizes: (
+    font-size-ratio: .875,
+    font-size-xx-small: 11px,
+    font-size-x-small: 13px,
+    font-size-small: 16px,
+    font-size-regular: 18px,
+    font-size-large: 21px,
+    font-size-x-large: 24px,
+    font-size-xx-large: 30px,
+    font-size-xxx-large-mobile: 40px,
+    font-size-xxx-large: 66px
+  ),
+  colors: (
+    "coral": #F35C48,
+    "green": #1A9D65,
+    "teal": #0089A2,
+    "blue": #154A94,
+    "fuchsia": #3F289C,
+    "purple": #8A4CC7,
+    "slate": #51596B,
+    "orange": #FA660A,
+    "magenta": #C1408B,
+    "magenta-dark": #9F2D71,
+    "red": #E93E51,
+    "yellow": #FDB714,
+    "yellow-light": #FED77C,
+    "black": #333,
+    "white": #FFF,
+    "gray": #999,
+    "gray-light": #EEE,
+    "transparent": transparent,
+    "shadow": rgba(0, 0, 0, .2),
+    primary: #C1408B,
+    secondary: #9F2D71
+  ),
+  colors-default: (
+    color-primary: "magenta",
+    color-secondary: "magenta-dark",
+    color-background: "white",
+    color-background-shade: "gray-light",
+    color-text: "black",
+    color-text-invert: "white",
+    color-text-weak: "gray",
+    color-text-link: "magenta",
+    color-background-footer: "yellow-light",
+    color-error: "red"
+  ),
+  transitions: (
+    button-transition: all ease-in-out .15s,
+    link-transition: all ease-in-out .15s
+  ),
+  z-index: (
+    z-index-offcanvas-side: 101,
+    z-index-offcanvas-overlay: 100,
+    z-index-offcanvas-main: 99,
+    z-index-alert: 4,
+    z-index-header: 3,
+    z-index-search-overlay: 2,
+    z-index-hero-title: 1
+  ),
+  dimensions: (
+    column: 70px,
+    gutter: 40px,
+    grid-columns: 12,
+    max-width-med: 900px,
+    max-width: 80em,
+    outer-gutter: 15,
+    outer-gutter-small: 20,
+    outer-gutter-medium: 30,
+    outer-gutter-large: 40,
+    horizontal-gutter: 20px
+  ),
+  animate: (
+    ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+    ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1),
+    animate-scss-speed: 0.75s,
+    animate-timing-function: cubic-bezier(0.23, 1, 0.32, 1)
+  ),
+  screens: (
+    xlarge: 1200px,
+    large: 1112px,
+    medium: 768px,
+    mobile: 480px,
+    small: 400px,
+    max-width-offset: 0.02px
+  ),
+  padding: (
+    column: 70px,
+    gutter: 40px,
+    grid-columns: 12,
+    max-width-med: 900px,
+    max-width: 80em,
+    outer-gutter: 15,
+    outer-gutter-small: 20,
+    outer-gutter-medium: 30,
+    outer-gutter-large: 40,
+    horizontal-gutter: 20px
+  ),
+  heights: (
+    height-banner: 50,
+    height-banner-large: 60,
+    height-banner-logo: 60
+  ),
+  widths: (
+    width-banner-logo: 75px,
+    width-offcanvas-side: 300px,
+    width-offcanvas-side-large: 350px
+  ),
+  stickers: (
+    sticker-size-mobile: 80,
+    sticker-size: 100
+  ),
+  animations: (
+    speed: .75s,
+    timing: cubic-bezier(.23, 1, .32, 1)
+  ),
+  icons: (icon-afterschool-guides, icon-anytime-anywhere, icon-arrow-right, icon-at-an-appt, icon-at-the-park, icon-at-the-store, icon-bathtime, icon-bedtime, icon-baby, icon-book, icon-calendar, icon-caret-down, icon-caret-left, icon-caret-right, icon-caret-line-down, icon-caret-line-left, icon-caret-line-right, icon-caret-line-up, icon-chevron-down, icon-chevron-left, icon-chevron-right, icon-chevron-up, icon-cash-expenses, icon-check, icon-check-outlined, icon-child-care, icon-city-id-card, icon-cleaning-up, icon-clock-o, icon-close, icon-diaper-change, icon-education, icon-enrichment, icon-envelope-o, icon-family-services, icon-food, icon-getting-dressed, icon-grade-schooler, icon-health-care, icon-housing, icon-laundry, icon-lightbulb, icon-map-marker, icon-mealtime, icon-on-the-go, icon-people-with-disabilities, icon-playtime, icon-pre-schooler, icon-pre-teen, icon-recurring, icon-search, icon-sms, icon-star, icon-summer-guides, icon-teen, icon-toddler, icon-topic, icon-work, icon-young-adult),
+  logos: (logo-growingupnyc, logo-nyc-childrens-cabinet, logo-vroom, logo-vroom-ar, logo-vroom-bn, logo-vroom-es, logo-vroom-fr, logo-vroom-ht, logo-vroom-ko, logo-vroom-pl, logo-vroom-ru, logo-vroom-ur, logo-vroom-zh-hant),
+  banners: (about, a, b, k, e, l, n, m, g, c, x, p, q, r, z, s, h, i, t, v, w, u, y),
+  populations: (
+    everyone: (
+      text: #FFF,
+      primary: #F35C48
+    ),
+    children-and-youth: (
+      text: #FFF,
+      primary: #E93E51
+    ),
+    families: (
+      text: #FFF,
+      primary: #1A9D65
+    ),
+    lgbtq-new-yorkers: (
+      text: #FFF,
+      primary: #0089A2
+    ),
+    immigrants: (
+      text: #FFF,
+      primary: #154A94
+    ),
+    adults: (
+      text: #FFF,
+      primary: #3F289C
+    ),
+    aging-new-yorkers: (
+      text: #FFF,
+      primary: #8A4CC7
+    ),
+    veterans: (
+      text: #FFF,
+      primary: #51596B
+    ),
+    magenta: (
+      text: #FFF,
+      primary: #C1408B
+    ),
+    orange: (
+      text: #FFF,
+      primary: #FA660A
+    ),
+    blue: (
+      text: #FFF,
+      primary: #154A94
+    ),
+    red: (
+      text: #FFF,
+      primary: #E93E51
+    ),
+    yellow: (
+      text: #333,
+      primary: #FDB714
+    ),
+    cat: (
+      text: #FFF,
+      primary: #C1408B
+    ),
+    pop: (
+      text: #FFF,
+      primary: #C1408B
+    )
+  )
+);

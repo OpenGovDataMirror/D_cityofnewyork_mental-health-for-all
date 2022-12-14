@@ -1,0 +1,45 @@
+{
+  "name": "@nycopportunity/mental-health-for-all",
+  "nicename": "Mental Health for All",
+  "version": "1.0.3",
+  "description": "Mental Health for All provides resources for New Yorkers seeking help for anxiety, trauma, substance misuse, and more.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development concurrently \"pttrn -w\" \"pttrn serve -w\" -p \"none\"",
+    "version": "npm run default && git add .",
+    "default": "NODE_ENV=testing concurrently \"pttrn -np\" \"pttrn services\"",
+    "development": "NODE_ENV=development concurrently \"pttrn -np\" \"pttrn services\"",
+    "staging": "NODE_ENV=staging concurrently \"pttrn -np\" \"pttrn services\"",
+    "production": "NODE_ENV=production concurrently \"pttrn -np\" \"pttrn services\"",
+    "services": "npx pttrn services",
+    "ghpages": "npm run default && cross-env NODE_ENV=testing pttrn publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CityOfNewYork/mhfa"
+  },
+  "author": "NYC Opportunity <products@nycopportunity.nyc.gov>",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/CityOfNewYork/mhfa/issues"
+  },
+  "homepage": "https://mentalhealthforall.nyc.gov",
+  "dependencies": {
+    "@nycopportunity/growingup-patterns": "file:../growingupnyc-patterns",
+    "@nycopportunity/pattern-attribution": "^1.0.3",
+    "@nycopportunity/pattern-menu": "^1.0.0",
+    "@nycopportunity/pattern-navigation": "^1.0.0",
+    "@nycopportunity/pttrn-scripts": "^1.0.5",
+    "@nycopportunity/wp-archive-vue": "^1.2.0",
+    "animate.scss": "^0.0.6",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@nycopportunity/pttrn": "^1.0.6",
+    "@rollup/plugin-json": "^4.1.0",
+    "node-sass": "^6.0.1",
+    "rollup-plugin-vue": "^5.1.9",
+    "tailwindcss": "^1.2.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

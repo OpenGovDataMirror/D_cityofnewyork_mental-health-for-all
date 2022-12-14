@@ -1,0 +1,25 @@
+/ Card
+
+/ Defaults
+- this.card = {}
+- this.color = ''
+
+/ Inherit overrides
+- if (typeof card !== 'undefined')
+  - this.card = Object.assign(this.card, card);
+
+div class='c-card flex mr-0 rounded-lg'
+
+  h3 class='c-card__title'
+    - if this.card.title
+      a href='${this.root}/services/${this.createSlug(this.card.title)}' rel='bookmark' tabindex="-1"
+        == this.card.title
+
+  div class="c-card__subtitle"
+    - if this.card.programProvider
+    p
+      == this.card.programProvider
+
+  div class='c-card__body'
+    -if this.card.subtitle
+      == this.card.subtitle

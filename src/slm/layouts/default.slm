@@ -1,0 +1,134 @@
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+    meta name='format-detection' content='telephone=no'
+    meta name='mobile-web-app-capable' content='yes'
+
+    link rel='icon' type='image/svg+xml' href='${this.root}/img/favicon/favicon.svg'
+    link rel='icon' type='image/png' href='${this.root}/img/favicon/favicon.png'
+
+    /**
+    /* Content Meta Tags
+    /*
+
+    title = title
+    meta name='title' content=title
+
+    - if (typeof description !== 'undefined')
+      meta name='description' content=description
+
+    / Open Graph / Facebook, LinkedIn, Twitter
+    - let imageUrl = (typeof image === 'string') ? `${this.root}/img/${image}` : `${this.root}/img/social.jpg`
+
+    meta property='og:type' content='website'
+    meta property='og:title' content=title
+    meta property='og:image' content='${imageUrl}'
+    / meta property='og:image:alt' content='A closeup of a woman smiling and comforted by hug from someone else.'
+
+    - if (typeof description !== 'undefined')
+      meta property='og:description' content=description
+
+    / Twitter Specific
+    meta property='twitter:card' content='summary_large_image'
+
+    /**
+    /* Preload/Prefetch
+    /*
+
+    / DNS Prefetching
+    link rel='dns-prefetch' href='//cdn.jsdelivr.net'
+    link rel='dns-prefetch' href='//www.googletagmanager.com'
+    link rel='dns-prefetch' href='//translate.googleapis.com'
+    link rel='dns-prefetch' href='//www.gstatic.com'
+    link rel='dns-prefetch' href='//fonts.gstatic.com'
+    link rel='dns-prefetch' href='//fonts.googleapis.com'
+    link rel='dns-prefetch' href='//s.w.org'
+    link rel='dns-prefetch' href='//www.google-analytics.com'
+    link rel='dns-prefetch' href='//cdnjs.cloudflare.com'
+
+    / Webtrends (City Analytics)
+    / link rel='dns-prefetch' href='//www1.nyc.gov'
+    / link rel="dns-prefetch" href='//s.webtrends.com'
+
+    /– Preloading Assets
+    link rel='preload' href=this.tokens.fonts.main
+    link rel='preload' href='${this.root}/svg/svgs.svg'
+    link rel='preload' href='https://cdn.jsdelivr.net/gh/NYCOpportunity/growingupnyc-patterns@v1.0.1/dist/svg/icons.svg'
+
+    /**
+    /* Primary Stylesheet
+    /*
+
+    link rel='stylesheet' href='${this.root}/css/default.css' type='text/css' media='screen'
+
+    /**
+    /* Indexing
+    /*
+
+    / Discourage search engines from indexing the site if not production
+    - if this.process.env.NODE_ENV !== 'production'
+      meta name='robots' content='noindex,nofollow'
+
+    /**
+    /* Google Analytics Global site tag (gtag.js)
+    /*
+
+    - if (this.gtag)
+      script async='' src='https://www.googletagmanager.com/gtag/js?id=${this.gtag}'
+
+      javascript:
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '${this.gtag}');
+
+    /**
+    /* Per page head extras
+    /*
+
+    = content('head')
+
+  body
+    a href='#main' class='show-for-keyboard' Skip to main content
+
+    = partial('/slm/partials/objects/menu/menu.slm')
+
+    = partial('/slm/partials/objects/navigation/navigation.slm')
+
+    main id='main' role='main'
+      = content('main')
+
+    = partial('/slm/partials/objects/footer/footer.slm');
+
+    script src='${this.root}/js/default.js'
+    script src="https://translate.google.com/translate_a/element.js?cb=window.googleTranslateInit"
+
+    javascript:
+      var gunyc = new Default();
+
+      gunyc.icons('https://cdn.jsdelivr.net/gh/NYCOpportunity/growingupnyc-patterns@v1.0.1/dist/svg/icons.svg');
+      gunyc.icons('${this.root}/svg/svgs.svg');
+      gunyc.toggle();
+      gunyc.accordion();
+      gunyc.menu();
+
+      window.googleTranslateInit = function() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es,ru,ko,ar,ht,zh-CN,fr,pl,ur,bn',
+          autoDisplay: false
+        }, 'js-google-translate');
+      };
+
+      gunyc.translateElement();
+
+      window.gunyc = gunyc
+
+    = content('scripts')
+
+    / The "hot" reloading script. Should not be compiled during production builds.
+    / @source https://www.npmjs.com/package/reload
+    - if this.process.env.NODE_ENV === 'development'
+      script src='/reload/reload.js'

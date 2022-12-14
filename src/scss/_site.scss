@@ -1,0 +1,232 @@
+/**
+ * General Overrides
+ */
+
+// Dependencies
+@import 'config/tokens';
+@import 'config/media';
+
+$colors: map-get($tokens, 'colors');
+
+:root {
+  --o-attribution-font-size: 0.9rem;
+
+  --o-navigation-icon-width: 1.375rem !important;
+  --o-navigation-icon-height: 1.375rem !important;
+  --o-navigation-shadow: 0 -4px 4px 0 rgb(0 0 0 / 15%);
+}
+
+@media screen and (min-width: $screen-tablet) {
+  :root {
+    --o-navigation-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+  }
+}
+
+body, html {
+  height: initial;
+  min-height: initial;
+}
+
+button {
+  transition: background-color .25s linear
+}
+
+* {
+  letter-spacing: 0 !important;
+}
+
+a {
+  font-weight: bold;
+}
+
+a *,
+svg,
+button * {
+  pointer-events: none
+}
+
+label {
+  cursor: pointer
+}
+
+.o-footer,
+.o-footer a {
+  color: map-get($colors, 'magenta-dark');
+}
+
+.c-list-box__heading.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sticker--medium {
+  width: 80px;
+  height: 80px;
+}
+
+.icon--communications {
+  width: 29px;
+}
+
+.icon-feather {
+  width: var(--o-navigation-icon-width);
+  height: var(--o-navigation-icon-height);
+  stroke: var(--o-navigation-icon-stroke-color);
+  stroke-width: var(--o-navigation-icon-stroke-width);
+  stroke-linecap: var(--o-navigation-icon-stroke-linecap);
+  stroke-linejoin: var(--o-navigation-icon-stroke-linejoin);
+  fill: var(--o-navigation-icon-fill);
+}
+
+.list-unordered--check {
+  ul, ol {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+    padding-inline-start: 1.7rem;
+  }
+
+  li,
+  ul li,
+  ol li {
+    margin: revert;
+    padding-top: revert;
+    padding-left: revert;
+    padding-right: revert;
+    text-indent: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  li:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.small {
+  font-size: 75%
+}
+
+.icon-google-translate-title {
+  position: absolute;
+  width: 132px;
+  height: 12px;
+  right: 0;
+}
+
+.mhfa-logo-main {
+  width: 100px;
+  height: 54px;
+}
+
+.mhfa-logo-footer {
+  display: none;
+  width: 168px;
+  height: 54px;
+}
+
+.mhfa-logo-footer-stacked {
+  width: 98px;
+  height: 54px;
+}
+
+.logo-nyc-opportunity {
+  max-width: 100%;
+  width: 284px;
+  height: 54px;
+}
+
+body, .o-navigation-spacing {
+  padding-bottom: 88px;
+}
+
+.o-navigation-spacing-bottom {
+  bottom: 88px;
+}
+
+.o-navigation-spacing-top {
+  top: 0;
+}
+
+.c-hero {
+  background-size: 100% auto;
+}
+
+.c-hero--short {
+  padding-bottom: 4.0625rem;
+}
+
+.c-card {
+  margin-right: 0;
+}
+
+.c-card__sticker {
+  position: static;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: $screen-tablet) {
+  .mhfa-logo-footer {
+    display: inline-block;
+  }
+
+  .mhfa-logo-footer-stacked {
+    display: none;
+  }
+
+  .mhfa-logo-main {
+    width: 249px;
+    height: 56px;
+  }
+
+  .logo-nyc-opportunity {
+    width: 332px;
+    height: 63px;
+  }
+
+  .icon-google-translate-title {
+    width: 175px;
+    height: 16px;
+  }
+
+  body, .o-navigation-spacing {
+    padding-bottom: 0;
+  }
+
+  .o-navigation-spacing-bottom {
+    bottom: 0;
+  }
+
+  .o-navigation-spacing-top {
+    top: 88px;
+  }
+
+  .c-hero {
+    background-size: cover;
+  }
+
+  [class*='o-content'] {
+    font-size: 1.3125rem;
+
+    h1, h2, h3, h4, h5, h6, p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .c-card {
+    margin-right: 2.5rem;
+  }
+
+  .c-card__sticker {
+    position: absolute
+  }
+}
+
+@media screen and (min-width: $screen-desktop) {
+  .o-navigation-spacing-top {
+    top: 0px;
+  }
+}
